@@ -1,0 +1,8 @@
+catboost==1.2.8
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.15.1
+scikit-learn==1.6.1
+py7zr==1.0.0
+matplotlib==3.10.6
+seaborn==0.13.2

@@ -1,0 +1,3 @@
+square_feet,bedrooms,bathrooms,cityname,state,latitude,longitude,amenities,pets_allowed,has_photo,fee,source
+850,2,1,Columbus,OH,39.966,-83.013,"Parking,Dishwasher",Cats,Yes,No,
+560,1,1,Denver,CO,39.733,-104.989,Laundry,,Yes,No,

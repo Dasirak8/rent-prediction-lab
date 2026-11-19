@@ -1,0 +1,149 @@
+{
+  "audit": {
+    "raw": 10000,
+    "ineligible": 6,
+    "duplicate_id": 0,
+    "retained": 9994,
+    "excluded": 6
+  },
+  "date_start": "2019-09-17",
+  "date_end": "2019-12-26",
+  "group_counts": {
+    "development": 1884,
+    "holdout": 472
+  },
+  "row_counts": {
+    "development": 8146,
+    "holdout": 1848
+  },
+  "dev_missing": {
+    "amenities": 2888,
+    "pets_allowed": 3431,
+    "bedrooms": 5,
+    "bathrooms": 29,
+    "latitude": 10,
+    "longitude": 10,
+    "cityname": 77
+  },
+  "dev_median": 1285.0,
+  "dev_p99": 4995.0,
+  "folds": [
+    {
+      "fold": 1,
+      "train": 6109,
+      "validation": 2037,
+      "train_cells": 1416,
+      "val_cells": 468
+    },
+    {
+      "fold": 2,
+      "train": 6109,
+      "validation": 2037,
+      "train_cells": 1412,
+      "val_cells": 472
+    },
+    {
+      "fold": 3,
+      "train": 6110,
+      "validation": 2036,
+      "train_cells": 1412,
+      "val_cells": 472
+    },
+    {
+      "fold": 4,
+      "train": 6110,
+      "validation": 2036,
+      "train_cells": 1412,
+      "val_cells": 472
+    }
+  ],
+  "candidate_counts": {
+    "CatBoost tree-prefix scores": 36,
+    "Random forest": 6
+  },
+  "champion": "Random forest",
+  "cv": [
+    {
+      "method": "Random forest",
+      "cv_rmse": 824.4991923066734,
+      "fold_sd": 371.8238036328627,
+      "avg_fit_seconds": 22.792297225000766
+    },
+    {
+      "method": "CatBoost",
+      "cv_rmse": 831.9040407328627,
+      "fold_sd": 388.8169476896518,
+      "avg_fit_seconds": 28.480381050000688
+    },
+    {
+      "method": "Ridge",
+      "cv_rmse": 889.2148274313435,
+      "fold_sd": 357.0302082279386,
+      "avg_fit_seconds": 0.10684847499942407
+    },
+    {
+      "method": "Median",
+      "cv_rmse": 1120.032261151496,
+      "fold_sd": 356.3720736260211,
+      "avg_fit_seconds": 0.0038133250000100816
+    }
+  ],
+  "holdout": [
+    {
+      "method": "Random forest",
+      "rmse": 621.2596336596264,
+      "mae": 308.10302256769467,
+      "bias": 25.817077765579196,
+      "n": 1848
+    },
+    {
+      "method": "CatBoost",
+      "rmse": 627.2397636810651,
+      "mae": 298.6440404960763,
+      "bias": 31.120833817656298,
+      "n": 1848
+    },
+    {
+      "method": "Ridge",
+      "rmse": 663.827116486266,
+      "mae": 353.4294230821028,
+      "bias": -22.483693271142336,
+      "n": 1848
+    },
+    {
+      "method": "Median",
+      "rmse": 985.6093924364127,
+      "mae": 488.1515151515151,
+      "bias": -108.70779220779221,
+      "n": 1848
+    }
+  ],
+  "cat_fixed_cv": 848.6914155679349,
+  "cat_params": {
+    "depth": 8,
+    "learning_rate": 0.04,
+    "l2_leaf_reg": 5,
+    "random_strength": 1.5,
+    "iterations": 750
+  },
+  "rf_params": {
+    "max_features": 0.8,
+    "min_samples_leaf": 1,
+    "n_estimators": 180
+  },
+  "ablations": [
+    {
+      "method": "Without rent comparables",
+      "cv_rmse": 820.1265419173427
+    },
+    {
+      "method": "Log target with comparables",
+      "cv_rmse": 832.3538296524873
+    }
+  ],
+  "cat_minus_rf_ci": [
+    -61.118510557540134,
+    69.32573736016622
+  ],
+  "holdout_seen_market_rows": 932
+}
